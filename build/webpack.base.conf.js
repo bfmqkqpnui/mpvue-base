@@ -24,15 +24,16 @@ function getEntry (rootSrc) {
    return map;
 }
 
-const appEntry = { app: resolve('./src/main.js') }
-const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
-const entry = Object.assign({}, appEntry, pagesEntry)
+// const appEntry = { app: resolve('./src/main.js') }
+// const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+// const entry = Object.assign({}, appEntry, pagesEntry)
+const MpvueEntry = require('mpvue-entry')
 
 let baseWebpackConfig = {
   // 如果要自定义生成的 dist 目录里面的文件路径，
   // 可以将 entry 写成 {'toPath': 'fromPath'} 的形式，
   // toPath 为相对于 dist 的路径, 例：index/demo，则生成的文件地址为 dist/index/demo.js
-  entry,
+  entry: MpvueEntry.getEntry('./src/router/router.js'),
   target: require('mpvue-webpack-target'),
   output: {
     path: config.build.assetsRoot,
@@ -46,7 +47,9 @@ let baseWebpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue': 'mpvue',
-      '@': resolve('src')
+      '@': resolve('src'),
+      flyio: 'flyio/dist/npm/wx',
+      wx: resolve('src/config/wx')
     },
     symlinks: false,
     aliasFields: ['mpvue', 'weapp', 'browser'],
@@ -54,15 +57,15 @@ let baseWebpackConfig = {
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
+      // {
+      //   test: /\.(js|vue)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: [resolve('src'), resolve('test')],
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter')
+      //   }
+      // },
       {
         test: /\.vue$/,
         loader: 'mpvue-loader',
@@ -107,24 +110,25 @@ let baseWebpackConfig = {
   },
   plugins: [
     // api 统一桥协议方案
-    new webpack.DefinePlugin({
-      'mpvue': 'global.mpvue',
-      'mpvuePlatform': 'global.mpvuePlatform'
-    }),
+    // new webpack.DefinePlugin({
+    //   'mpvue': 'global.mpvue',
+    //   'mpvuePlatform': 'global.mpvuePlatform'
+    // }),
     new MpvuePlugin(),
-    new CopyWebpackPlugin([{
-      from: '**/*.json',
-      to: ''
-    }], {
-      context: 'src/'
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: path.resolve(config.build.assetsRoot, './static'),
-        ignore: ['.*']
-      }
-    ])
+    new MpvueEntry(),
+    // new CopyWebpackPlugin([{
+    //   from: '**/*.json',
+    //   to: ''
+    // }], {
+    //   context: 'src/'
+    // }),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: path.resolve(config.build.assetsRoot, './static'),
+    //     ignore: ['.*']
+    //   }
+    // ])
   ]
 }
 

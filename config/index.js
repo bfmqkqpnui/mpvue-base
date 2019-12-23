@@ -31,8 +31,8 @@ var fileExt = fileExtConfig[process.env.PLATFORM]
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, `../dist/${fileExt.platform}/index.html`),
-    assetsRoot: path.resolve(__dirname, `../dist/${fileExt.platform}`),
+    index: path.resolve(__dirname, `../dist/index.html`),
+    assetsRoot: path.resolve(__dirname, `../dist`),
     assetsSubDirectory: '',
     assetsPublicPath: '/',
     productionSourceMap: false,
