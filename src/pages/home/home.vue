@@ -1,12 +1,15 @@
 <template>
   <div class="home">
     首页
-    <logistics :list="list" :backColor="backColor"></logistics>
+    <timeLine :list="list" :backColor="backColor"></timeLine>
+    <!-- <mp-keyboard></mp-keyboard> -->
   </div>
 </template>
 
 <script>
-import logistics from '../../components/timeLine/timeLine'
+import timeLine from '../../components/timeLine/timeLine'
+import keyboard from  '../../components/keyboard/keyboard'
+
   export default {
     name: 'home',
     data() {
@@ -40,7 +43,8 @@ import logistics from '../../components/timeLine/timeLine'
     onLoad() {},
     onShow() {},
     components: {
-      logistics
+      timeLine,
+      'mp-keyboard': keyboard
     }
   }
 </script>

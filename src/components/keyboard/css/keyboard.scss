@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+// 键盘
+.keyboard-randon{
+  width: 100%;
+  // margin-bottom: 20rpx;
+  position: absolute;
+  bottom: 0;
+  li{
+    float: left;
+    width: 33.33%;
+    height: 108rpx;
+    line-height: 116rpx;
+    font-size: 58rpx;
+    font-weight: 800;
+    border-bottom: 2rpx solid #ddd;
+    border-right: 2rpx solid #ddd;
+    text-align: center;
+    box-sizing: border-box;
+    &:active {
+      background: #ddd;
+    }
+    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+      border-top: 2rpx solid #ddd;
+    }
+    &:nth-child(3n){
+      border-right: none;
+    }
+    &:nth-child(10), &:nth-child(11), &:nth-child(12){
+      border-bottom: none;
+    }
+  }
+  .grey-c{
+    height: 100%;
+    width: 100%;
+    background-color: #e5e5e5!important;
+    img{
+      width: 44rpx;
+      height: 44rpx;
+    }
+  }
+}
