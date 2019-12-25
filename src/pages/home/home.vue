@@ -40,7 +40,7 @@ import keyboard from  '../../components/keyboard/keyboard'
       }
     },
     props: {},
-    onLoad() {},
+    onLoad(options) {},
     onShow() {},
     components: {
       timeLine,

@@ -15,4 +15,12 @@ module.exports = [
       // enablePullDownRefresh: true
     }
   },
+  {
+    path: 'pages/login/login',
+    name: 'login',
+    config: {
+      navigationBarTitleText: '登录',
+      // enablePullDownRefresh: true
+    }
+  },
 ]
