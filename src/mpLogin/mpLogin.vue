@@ -150,17 +150,6 @@ import api from './api/api'
       }
     },
     onLoad(options) {
-      console.log("showLoginContainer", this.showLoginContainer)
-      console.log("showPhoneLogin", this.showPhoneLogin)
-      console.log("showAuth", this.showAuth)
-      console.log("custom", this.custom)
-      console.log("showLogin", this.showLogin)
-      console.log("")
-      console.log("")
-      console.log("")
-      console.log("")
-      console.log("")
-      console.log("")
     },
     methods: {
       bindGetUserInfo(e) {
