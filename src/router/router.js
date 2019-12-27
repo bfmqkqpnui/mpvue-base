@@ -23,4 +23,12 @@ module.exports = [
       // enablePullDownRefresh: true
     }
   },
+  {
+    path: 'pages/imgFlipping/imgFlipping',
+    name: 'imgFlipping',
+    config: {
+      navigationBarTitleText: '图片翻转',
+      // enablePullDownRefresh: true
+    }
+  },
 ]

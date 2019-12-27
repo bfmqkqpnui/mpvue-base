@@ -55,9 +55,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "首页",
-					"pathName": "pages/home/home",
+					"id": 1,
+					"name": "翻转",
+					"pathName": "pages/imgFlipping/imgFlipping",
 					"query": "",
 					"scene": null
 				},
@@ -65,6 +65,7 @@
 					"id": -1,
 					"name": "登录",
 					"pathName": "pages/login/login",
+					"query": "",
 					"scene": null
 				}
 			]
