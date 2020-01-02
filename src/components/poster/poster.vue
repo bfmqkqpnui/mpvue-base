@@ -3,11 +3,9 @@
     <div class="poster-bg">
       <div class="poster-sign">生成您的专属海报</div>
       <div class="poster-main">
-        <!-- <canvas :canvas-id="canvasid" class="shareBody"></!-->
         <img src="https://Img.iblimg.com/resh5-1/weChatImg/iBaiLianMP/product/icon_close.png" class="poster-close" @click.stop="close"/>
         <div class="poster-body">
           <div class="poster-title">
-            <!-- <img :src="poster.activityImg"> -->
              <img src="https://Img.iblimg.com/resh5-1/weChatImg/iBaiLianMP/product/icon@2x.png">
           </div>
            <canvas :canvas-id="canvasid" class="shareBody"></canvas>
