@@ -1,6 +1,6 @@
 # mpvue-base
 
-> A Mpvue project
+> 微信小程序
 
 ## Build Setup
 
